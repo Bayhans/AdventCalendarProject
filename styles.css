@@ -11,6 +11,10 @@ body {
   /* font-family: 'Lexend Deca', sans-serif; */
 font-family: 'Mountains of Christmas', cursive;
 background-image: url(https://images.unsplash.com/photo-1457269449834-928af64c684d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
+
 /* font-family: 'Rochester', cursive; */
 }
 
@@ -34,14 +38,19 @@ main {
 }
 
 i {
-    height: 10vw;
+    height: 50px;
 }
 
 
 div {
     text-align: center;
     height: 10vw;
+    border: dotted green 2px;
     /* box-shadow: 1px 1px 1px black; */
+}
+
+#app {
+    border: none;
 }
 
 p {

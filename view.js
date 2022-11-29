@@ -8,9 +8,8 @@ function show() {
     </header>
 
     <main>
-    <div class="luke1">
+    <div class="luke1"><img src="./images/NewImage.jpg" width="80vw" heigh="50vw">
     </div>
-    <img src="./images/Snowcrystal.jpg">    
     <div class="luke2"><p>2</p></div>
      <div class="luke3"><p>3</p></div>
     <div class="luke4"><p>4</p></div>
