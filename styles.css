@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+div {
+    display: grid;
+    margin: 3em;
+    grid-template-areas: 
+    "1   23  21  12  17  6   20"
+    "5   13  22  7   2   19  9"
+    "10  t   t   t   0   8   15 "
+    "18  0   0   24  24  24  4"
+    "16  3   11  24  24  24  14";
+    /* grid-template-columns: repeat(); */
+    /* grid-template-rows: repeat(1fr, 5); */
+}
+
+div.luke13 {
+    grid-area: 13;
+    background-color: orange;
+}
+
+div.luke14 {
+    grid-area: 14;
+    background-color: aqua;
+}
