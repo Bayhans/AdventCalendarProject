@@ -1,27 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@700&family=Mountains+of+Christmas:wght@700&family=Rochester&display=swap');
+
+
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
+body {
+  display: grid;
+  /* font-family: 'Lexend Deca', sans-serif; */
+font-family: 'Mountains of Christmas', cursive;
+background-image: url(https://images.unsplash.com/photo-1457269449834-928af64c684d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
+/* font-family: 'Rochester', cursive; */
+}
+
+
+
+main {
+  display: grid;
+  margin: 3em;
+  grid-template-areas:
+    "header   header header  header header   header   header"
+    "luke1   luke23  luke21  luke12  luke17  luke6   luke20"
+    "luke5   luke13  luke22  luke7   luke2   luke19  luke9"
+    "luke10  jul     jul     jul     empty   luke8   luke15"
+    "luke18  empty2  empty2  luke24  luke24  luke24  luke4"
+    "luke16  luke3   luke11  luke24  luke24  luke24  luke14";
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 1fr 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: 50px 50px 50px 50px 50px 50px 50px;
+  grid-template-rows: 50px 50px 50px 50px 50px; */
+}
+
+i {
+    height: 10vw;
+}
+
+
 div {
-    display: grid;
-    margin: 3em;
-    grid-template-areas: 
-    "1   23  21  12  17  6   20"
-    "5   13  22  7   2   19  9"
-    "10  t   t   t   0   8   15 "
-    "18  0   0   24  24  24  4"
-    "16  3   11  24  24  24  14";
-    /* grid-template-columns: repeat(); */
-    /* grid-template-rows: repeat(1fr, 5); */
+    text-align: center;
+    height: 10vw;
+    /* box-shadow: 1px 1px 1px black; */
+}
+
+p {
+/* margin-top: 3vw;
+margin-bottom: 3vw; */
+font-size: 3vw;
+}
+/*! Fix so the number is in center! */
+
+
+header {
+    display: flex;
+    justify-content: center;
+    padding-top: 10vw;
+}
+
+header h1 {
+    font-size: 8vw;
+    color: rgb(179, 17, 17)
+    
+}
+
+.empty {
+    grid-area: empty;
+    background-color: aqua;
+}
+.empty2 {
+    grid-area: empty2;
+    background-color: aqua;
+}
+
+
+
+.jul {
+  grid-area: jul;
+  background-color: rgb(255, 166, 0);
+  font-family: 'Rochester', cursive;
+}
+
+.luke1 {
+  grid-area: luke1;
+/* src="/images/Snowcrystal.jpg" */
+  background-color: rgb(74, 145, 85);
+}
+
+.luke2 {
+  grid-area: luke2;
+
+  background-color: rgb(74, 145, 85);
+}
+.luke3 {
+  grid-area: luke3;
+
+  background-color: rgb(74, 145, 85);
+}
+.luke4 {
+  grid-area: luke4;
+
+  background-color: rgb(74, 145, 85);
+}
+.luke5 {
+  grid-area: luke5;
+
+  background-color: rgb(74, 145, 85);
+}
+.luke6 {
+  grid-area: luke6;
+
+  background-color: rgb(74, 145, 85);
+}
+.luke7 {
+  grid-area: luke7;
+
+  background-color: rgb(74, 145, 85);
+}
+.luke8 {
+  grid-area: luke8;
+
+  background-color: rgb(74, 145, 85);
+}
+
+.luke9 {
+  grid-area: luke9;
+
+  background-color: rgb(74, 145, 85);
+}
+div.luke10 {
+  grid-area: luke10;
+
+  background-color: rgb(74, 145, 85);
+}
+div.luke11 {
+  grid-area: luke11;
+
+  background-color: rgb(74, 145, 85);
+}
+div.luke12 {
+  grid-area: luke12;
+
+  background-color: rgb(74, 145, 85);
 }
 
 div.luke13 {
-    grid-area: 13;
-    background-color: orange;
+  grid-area: luke13;
+
+  background-color: rgb(74, 145, 85);
 }
 
 div.luke14 {
-    grid-area: 14;
-    background-color: aqua;
+  grid-area: luke14;
+  background-color: rgb(74, 145, 85);
+}
+
+div.luke15 {
+  grid-area: luke15;
+  background-color: rgb(74, 145, 85);
+}
+div.luke16 {
+  grid-area: luke16;
+  background-color: rgb(74, 145, 85);
+}
+div.luke17 {
+  grid-area: luke17;
+  background-color: rgb(74, 145, 85);
+}
+div.luke18 {
+  grid-area: luke18;
+  background-color: rgb(74, 145, 85);
+}
+div.luke19 {
+  grid-area: luke19;
+  background-color: rgb(74, 145, 85);
+}
+div.luke20 {
+  grid-area: luke20;
+  background-color: rgb(74, 145, 85);
+}
+div.luke21 {
+  grid-area: luke21;
+  background-color: rgb(74, 145, 85);
+}
+div.luke22 {
+  grid-area: luke22;
+  background-color: rgb(74, 145, 85);
+}
+div.luke23 {
+  grid-area: luke23;
+  background-color: rgb(74, 145, 85);
+}
+
+div.luke24 {
+  grid-area: luke24;
+  font-size: 5vw;
+  height: 21vw;
+  background-color: rgb(255, 0, 0);
+}
+div.luke24 p{
+    font-size: 6vw;
+  }
+
+.julP {
+    font-size: 5vw;
+    text-align: center;
 }
