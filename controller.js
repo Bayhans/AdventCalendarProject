@@ -1,28 +1,69 @@
-// const element = document.querySelector("content");
-// const compStyles = window.getComputedStyle(element);
+export let oneTitle = [];
+export let fooResultServings = [];
+export let fooResultInstructions = [];
+export let fooResultIngredients = [];
+
+ async function recipeGetter2() {
+  const query = "christmas"
+  const request = await fetch("https://api.api-ninjas.com/v1/recipe?query=" + query, {
+    headers: {
+      "X-Api-Key": "0DhBnOBWv10+HOeWsN0T1w==KEfK5ymNm4BcPBud"
+    }
+  })
+  const response = await request.json() // konverterer fra json-text til javascript object/array
+  return response
+}
+ recipeGetter2().then(function(result) {
+  result.forEach(element => fooResultIngredients.push(element.ingredients));
+  result.forEach(element => fooResultInstructions.push(element.instructions));
+  result.forEach(element => fooResultServings.push(element.servings));
+  result.forEach(element => fooResultTitle.push(element.title));
+
+  let oneTitle = [];
+  for (let element of fooResultTitle) oneTitle.push(element)
+})
 
 
-let content2 = document.querySelector("Luke2");
-const button2 = document.getElementById("btn2");
 
 
-function origin() {
-    window.moveTo(0, 0);
-  }
+// function riddelGetter() {
+//   $.ajax({
+//     method: "GET",
+//     url: "https://api.api-ninjas.com/v1/riddles",
+//     headers: { "X-Api-Key": "0DhBnOBWv10+HOeWsN0T1w==KEfK5ymNm4BcPBud" },
+//     contentType: "application/json",
+//     success: function (riddle) {
+//       for (let i = 0; i < riddle.length;i++) {
+//         let allRiddles = riddle[i];
+//         return(allRiddles[0]);
 
-// let clicks = 0
+//         console.log(allRiddles);
+//       }
+//     },
+//     error: function ajaxError(jqXHR) {
+//       console.error("Error: ", jqXHR.responseText);
+//     },
+//   });
+// };
 
-// function changeImageSize() {
-//     content.style.width = "60%";
-//     content.style.height = "auto";
-//     content.style.transition = "width 0.5s ease";
+// function riddelesWrapper(){
+    // let choosenRiddel;
+    // for(let i = 0; i < allRiddles.length; i++){
+    //     choosenRiddel = allRiddles[i];
+    //     console.log(allRiddles[i]);
+    //     return choosenRiddel;
+    // }
 // }
-// // Function to reset image dimensions
-// function resetImg() {
-//     content.style.width = "40%";
-//     content.style.height = "auto";
-//     content.style.transition = "width 0.5s ease";
+
+// function Pic() {
+//   var pic = [
+//     'https://loremflickr.com/2000/1000/christmas',
+//   ];
+  
+//   $("header").css({
+//     background:
+//       "url(" + pic[Math.floor(Math.random() * pic.length)] + ") center no-repeat",
+    
+//   });
 // }
-
-
-//     if click += 1
+// Pic();
