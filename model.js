@@ -9,3 +9,9 @@ export let allRecipesServings = fooResultServings;
 export let allRecipesInstructions = fooResultInstructions;
 export let allRecipesIngredients = fooResultIngredients;
 export let allRiddles = [];
+
+let allRecipesTitle = oneTitle;
+let allRecipesServings = fooResultServings;
+let allRecipesInstructions = fooResultInstructions;
+let allRecipesIngredients = fooResultIngredients;
+let allRiddles = [];

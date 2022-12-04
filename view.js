@@ -1,19 +1,19 @@
-import {oneTitle} from './model.js';
+import {allRecipesTitle} from './model.js';
 import {allRecipesServings} from './model.js';
 import {allRecipesInstructions} from './model.js';
 import {allRecipesIngredients} from './model.js';
-console.log(oneTitle)
+console.log(allRecipesTitle)
 console.log(allRecipesInstructions)
 show();
 function show() {
   let mainPage = document.getElementById("app");
   let tempPage = "";
   tempPage += /*html*/ `
-<header>
-<div class="headerText"><h1><span class="span_1">Christmas</span> <span class="span_2">Calendar</span> <span class="span_3">2022</span></h1></div>
-</header>
+    <header>
+    <div class="headerText"><h1><span class="span_1">Christmas</span> <span class="span_2">Calendar</span> <span class="span_3">2022</span></h1></div>
+    </header>
 
-<main>
+    <main>
   <div class="luke1 "  style=" grid-area: luke1;">
   <label class="btn " for="modal-1"><p class="numbers" >1</p><i class="fa-solid fa-candy-cane" ></i></label>
   </div>
@@ -106,7 +106,6 @@ function show() {
 <div class="modal__inner">
   <label class="modal__close" for="modal-1"></label>
   <h2>How it works</h2>
-  
   </div>
 </div>
   `;
