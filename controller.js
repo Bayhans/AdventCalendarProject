@@ -1,10 +1,4 @@
-// export let resultTitles = [];
-// export let resultServings = [];
-// export let resultInstructions = [];
-// export let resultIngredients = [];
 export let recipeResult = [];
-// export let recipeResultIsArr = [];
-// export let testArray = ["Show this"];
 
 async function recipeGetter() {
   const query = "christmas";
@@ -29,6 +23,28 @@ function getRandomRecipe() {
   return randomElement;
 }
 
+recipeGetter().then(function (data) {
+  dataCache = data;
+  var randomElement = [];
+  randomElement.push(data[Math.floor(Math.random() * data.length)]);
+
+  var mainContainer = document.getElementById("myRecipeContainer");
+  for (var i = 0; i < randomElement.length; i++) {
+    var div = document.createElement("div");
+    div.innerHTML =
+      randomElement[i].title +
+      "<br>" +
+      "ingredients: " +
+      randomElement[i].ingredients +
+      "<br>" +
+      "instructions: " +
+      randomElement[i].instructions +
+      "<br>" +
+      "servings: " +
+      randomElement[i].servings;
+    mainContainer.appendChild(div);
+  }
+  
 window.addEventListener("click", function () {
   let randomElement = getRandomRecipe();
 
@@ -37,7 +53,6 @@ window.addEventListener("click", function () {
   for (var i = 0; i < randomElement.length; i++) {
     var div = document.createElement("div");
     div.innerHTML =
-      "Title: " +
       randomElement[i].title +
       "<br>" +
       "ingredients: " +
@@ -52,29 +67,6 @@ window.addEventListener("click", function () {
     cardElementCache.push(div);
   }
 });
-
-recipeGetter().then(function (data) {
-  dataCache = data;
-  var randomElement = [];
-  randomElement.push(data[Math.floor(Math.random() * data.length)]);
-
-  var mainContainer = document.getElementById("myRecipeContainer");
-  for (var i = 0; i < randomElement.length; i++) {
-    var div = document.createElement("div");
-    div.innerHTML =
-      "Title: " +
-      randomElement[i].title +
-      "<br>" +
-      "ingredients: " +
-      randomElement[i].ingredients +
-      "<br>" +
-      "instructions: " +
-      randomElement[i].instructions +
-      "<br>" +
-      "servings: " +
-      randomElement[i].servings;
-    mainContainer.appendChild(div);
-  }
 });
 
 // async function riddelGetter() {
@@ -100,26 +92,6 @@ recipeGetter().then(function (data) {
 
 // })
 
-// function riddelGetter() {
-//   $.ajax({
-//     method: "GET",
-//     url: "https://api.api-ninjas.com/v1/riddles",
-//     headers: { "X-Api-Key": "0DhBnOBWv10+HOeWsN0T1w==KEfK5ymNm4BcPBud" },
-//     contentType: "application/json",
-//     success: function (riddle) {
-//       for (let i = 0; i < riddle.length;i++) {
-//         let allRiddles = riddle[i];
-//         return(allRiddles[0]);
-
-//         console.log(allRiddles);
-//       }
-//     },
-//     error: function ajaxError(jqXHR) {
-//       console.error("Error: ", jqXHR.responseText);
-//     },
-//   });
-// };
-
 // function riddelesWrapper(){
 // let choosenRiddel;
 // for(let i = 0; i < allRiddles.length; i++){
@@ -128,16 +100,3 @@ recipeGetter().then(function (data) {
 //     return choosenRiddel;
 // }
 // }
-
-// function Pic() {
-//   var pic = [
-//     'https://loremflickr.com/2000/1000/christmas',
-//   ];
-
-//   $("header").css({
-//     background:
-//       "url(" + pic[Math.floor(Math.random() * pic.length)] + ") center no-repeat",
-
-//   });
-// }
-// Pic();

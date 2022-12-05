@@ -1,21 +1,4 @@
-// import { resultTitles } from "./controller.js";
-// import { resultServings } from "./controller.js";
-// import { resultInstructions } from "./controller.js";
-// import { resultIngredients } from "./controller.js";
 import { recipeResult } from "./controller.js";
-// import {testArray} from './controller.js'
-
-// console.log(recipeResult)
-// console.log(recipeResult.indexOf("Grandma Smith's Christmas Cookies"))
-// console.log(JSON.stringify(recipeResult[0]))
-
-// console.log(recipeResult);
-// import {allRecipesTitle} from './model.js';
-// import {allRecipesServings} from './model.js';
-// import {allRecipesInstructions} from './model.js';
-// import {allRecipesIngredients} from './model.js';
-// console.log(allRecipesTitle)
-// console.log(allRecipesInstructions)
 show();
 function show() {
   let mainPage = document.getElementById("app");
@@ -24,7 +7,7 @@ function show() {
 <header>
 <div class="headerText"><h1><span class="span_1">Christmas</span> <span class="span_2">Calendar</span> <span class="span_3">2022</span></h1></div>
 </header>
-
+<div id="snow"></div>
 <main>
   <div class="luke1 "  style=" grid-area: luke1;">
   <label class="btn " for="modal-1"><p class="numbers" >1</p><i class="fa-solid fa-candy-cane" ></i></label>
@@ -123,16 +106,3 @@ function show() {
   `;
   mainPage.innerHTML = tempPage;
 }
-
-
-
-// console.log(testArray)
-// console.log((testArray.toString()))
-
-
-
-
-
-
-
-
