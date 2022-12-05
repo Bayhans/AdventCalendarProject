@@ -79,24 +79,30 @@ window.addEventListener("click", function () {
 //   const response = await request.json() // konverterer fra json-text til javascript object/array
 //   return response
 // }
-//  recipeGetter().then(function(result) {
-//   var randomElement = [];
-//   randomElement.push(result[Math.floor(Math.random() * result.length)]);
-//   recipeResult.push(randomElement);  // trenger ikke
-
-//   randomElement.forEach(title => resultTitles.push(title.title));
-//   randomElement.forEach(ingredient => resultIngredients.push(ingredient.ingredients));
-//   randomElement.forEach(serving => resultServings.push(serving.serving));
-//   randomElement.forEach(instruction => resultInstructions.push(instruction.instructions));
-//   instruction => testArray.push(instruction.instruction);
-
+// riddelGetter().then(function(data) {
+//   var randomRiddel = [];
+//   randomRiddel.push(data[Math.floor(Math.random() * data.length)]);
+//   return randomRiddel;
 // })
 
-// function riddelesWrapper(){
-// let choosenRiddel;
-// for(let i = 0; i < allRiddles.length; i++){
-//     choosenRiddel = allRiddles[i];
-//     console.log(allRiddles[i]);
-//     return choosenRiddel;
-// }
+// function riddelesWrapper(randomRiddel){
+// var RiddelContainer = document.getElementById("RiddelContainer");
+// for(let i = 0; i < randomRiddel.length; i++){
+//   mainContainer.innerHTML = "";
+//   consol.log(randomRiddel);
+//     // var div = document.createElement("div");
+//     // div.innerHTML =
+//     // randomRiddel[i].title +
+//     //   "<br>" +
+//     //   "ingredients: " +
+//     //   randomRiddel[i].ingredients +
+//     //   "<br>" +
+//     //   "instructions: " +
+//     //   randomElement[i].instructions +
+//     //   "<br>" +
+//     //   "servings: " +
+//     //   randomElement[i].servings;
+//     // mainContainer.appendChild(div);
+//     // cardElementCache.push(div);
+//   }
 // }
