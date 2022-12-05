@@ -180,7 +180,7 @@ header h1 {
 
 .modal__inner {
   transition: top .25s ease;
-  width: auto;
+  width: 80%;
   margin: 5% auto;
   background: #fff;
   border-radius: 5px;
