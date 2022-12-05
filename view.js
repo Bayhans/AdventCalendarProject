@@ -1,11 +1,15 @@
-import {resultTitles} from './controller.js';
-import {resultServings} from './controller.js';
-import {resultInstructions} from './controller.js';
-import {resultIngredients} from './controller.js';
-import {recipeResult} from './controller.js';
+// import { resultTitles } from "./controller.js";
+// import { resultServings } from "./controller.js";
+// import { resultInstructions } from "./controller.js";
+// import { resultIngredients } from "./controller.js";
+import { recipeResult } from "./controller.js";
+// import {testArray} from './controller.js'
 
-console.log(recipeResult);
+// console.log(recipeResult)
+// console.log(recipeResult.indexOf("Grandma Smith's Christmas Cookies"))
+// console.log(JSON.stringify(recipeResult[0]))
 
+// console.log(recipeResult);
 // import {allRecipesTitle} from './model.js';
 // import {allRecipesServings} from './model.js';
 // import {allRecipesInstructions} from './model.js';
@@ -113,11 +117,22 @@ function show() {
 <label class="modal__bg" for="modal-1"></label>
 <div class="modal__inner">
   <label class="modal__close" for="modal-1"></label>
-  <h2>How it works</h2>
-  <div> resultTitles here ${resultTitles } </div>
+  <div id="myRecipeContainer"></div>
   </div>
 </div>
   `;
   mainPage.innerHTML = tempPage;
 }
+
+
+
+// console.log(testArray)
+// console.log((testArray.toString()))
+
+
+
+
+
+
+
 

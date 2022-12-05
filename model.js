@@ -1,8 +1,8 @@
-import {resultTitles} from './controller.js';
-import {resultServings} from './controller.js';
-import {resultInstructions} from './controller.js';
-import {resultIngredients} from './controller.js';
-
+// import {resultTitles} from './controller.js';
+// import {resultServings} from './controller.js';
+// import {resultInstructions} from './controller.js';
+// import {resultIngredients} from './controller.js';
+// import {testArray} from '.controller.js'
 
 // export let allRecipesTitle = oneTitle;
 // export let allRecipesServings = fooResultServings;
