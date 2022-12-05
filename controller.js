@@ -1,9 +1,10 @@
-export let oneTitle = [];
-export let fooResultServings = [];
-export let fooResultInstructions = [];
-export let fooResultIngredients = [];
+export var resultTitles = [];
+export let resultServings = [];
+export let resultInstructions = [];
+export let resultIngredients = [];
+export let recipeResult = [];
 
- async function recipeGetter2() {
+ async function recipeGetter() {
   const query = "christmas"
   const request = await fetch("https://api.api-ninjas.com/v1/recipe?query=" + query, {
     headers: {
@@ -13,14 +14,17 @@ export let fooResultIngredients = [];
   const response = await request.json() // konverterer fra json-text til javascript object/array
   return response
 }
- recipeGetter2().then(function(result) {
-  result.forEach(element => fooResultIngredients.push(element.ingredients));
-  result.forEach(element => fooResultInstructions.push(element.instructions));
-  result.forEach(element => fooResultServings.push(element.servings));
-  result.forEach(element => fooResultTitle.push(element.title));
+ recipeGetter().then(function(result) {
+  var randomElement = [];
+  randomElement.push(result[Math.floor(Math.random() *result.length)]);
+  recipeResult.push(randomElement);
 
-  let oneTitle = [];
-  for (let element of fooResultTitle) oneTitle.push(element)
+  
+  randomElement.forEach(title => resultTitles.push(title.title));
+  randomElement.forEach(ingredient => resultIngredients.push(ingredient.ingredients));
+  randomElement.forEach(serving => resultServings.push(serving.serving));
+  randomElement.forEach(instruction => resultInstructions.push(instruction.instructions));
+
 })
 
 
