@@ -4,10 +4,11 @@ function show() {
   let mainPage = document.getElementById("app");
   let tempPage = "";
   tempPage += /*html*/ `
+  <div id="snow"></div>
 <header>
 <div class="headerText"><h1><span class="span_1">Christmas</span> <span class="span_2">Calendar</span> <span class="span_3">2022</span></h1></div>
 </header>
-<div id="snow"></div>
+
 <main>
   <div class="luke1 "  style=" grid-area: luke1;">
   <label class="btn " for="modal-1"><p class="numbers" >1</p><i class="fa-solid fa-candy-cane" ></i></label>
@@ -100,6 +101,7 @@ function show() {
 <label class="modal__bg" for="modal-1"></label>
 <div class="modal__inner">
   <label class="modal__close" for="modal-1"></label>
+  <div id="myRiddelContainer"></div>
   <div id="myRecipeContainer"></div>
   </div>
 </div>

@@ -93,6 +93,11 @@ main {
   -webkit-text-stroke-color: rgb(17, 74, 107);
 }
 
+
+h2.riddleTitle {
+  color: red;
+  padding: 0.5em 0;
+}
 /*//***/
 
 div {
@@ -187,6 +192,28 @@ header h1 {
   padding: 1em 2em;
   color: black;
   height: auto;
+    background-color: rgb(84, 247, 111);
+}
+
+#myRecipeContainer div h2 {
+  color: red;
+}
+
+#myRecipeContainer div p {
+  color: blue;
+}
+
+#myRiddelContainer div h2 {
+  color: red;
+}
+
+/* #myRiddleContainer div p {
+  font-size: 8px;
+  color: blue;
+} */
+
+h3 {
+  font-size: 15px;
 }
 
 .modal__close {
