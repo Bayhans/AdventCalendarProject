@@ -36,13 +36,13 @@ recipeGetter().then(function (data) {
       var div = document.createElement("div");
       div.innerHTML =
         "<h1>" + randomElement[i].title + "</h1>" +
-        "<br>" 
+        "<br>" +
         "<h2>" + "ingredients: " + "</h2>" +
         "<h3>" + randomElement[i].ingredients + "</h3>" +
-        "<br>" 
+        "<br>" +
         "<h2>" + "instructions: " + "</h2>" +
         "<h3>" + randomElement[i].instructions + "</h3>" +
-        "<br>" 
+        "<br>" +
         "<h2>" + "servings: " + "</h2>" +
         randomElement[i].servings;
       mainContainer.appendChild(div);
@@ -59,7 +59,6 @@ $.ajax({
   success: function (result) {
     var mainContainer = document.getElementById("myRiddelContainer");
     window.addEventListener("click", function () {
-      console.log(result);
       mainContainer.innerHTML = "";
       for (var i = 0; i < result.length; i++) {
         var div = document.createElement("div");
