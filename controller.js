@@ -24,13 +24,18 @@ function getRandomRecipe() {
 }
 
 recipeGetter().then(function (data) {
+
   dataCache = data;
   var randomElement = [];
   randomElement.push(data[Math.floor(Math.random() * data.length)]);
   var mainContainer = document.getElementById("myRecipeContainer");
 
-  window.addEventListener("click", function () {
-    let randomElement = getRandomRecipe();
+
+  window.addEventListener("click", function (event) {
+
+    // console.log(event.target);
+    if (event.target.className === 'modal-state') {
+      let randomElement = getRandomRecipe();
     mainContainer.innerHTML = "";
     for (var i = 0; i < randomElement.length; i++) {
       var div = document.createElement("div");
@@ -48,28 +53,58 @@ recipeGetter().then(function (data) {
       mainContainer.appendChild(div);
       cardElementCache.push(div);
     }
+    riddelGetter();
+    
+  };
+  event.preventDefault(); // denne fikser dobbel kjøring 
+  // men den disabler modal lukking funksjonaliteten
+
   });
 });
 
-$.ajax({
-  method: "GET",
-  url: "https://api.api-ninjas.com/v1/riddles",
-  headers: { "X-Api-Key": "0DhBnOBWv10+HOeWsN0T1w==KEfK5ymNm4BcPBud" },
-  contentType: "application/json",
-  success: function (result) {
-    var mainContainer = document.getElementById("myRiddelContainer");
-    window.addEventListener("click", function () {
-      mainContainer.innerHTML = "";
-      for (var i = 0; i < result.length; i++) {
-        var div = document.createElement("div");
-        div.innerHTML =
-          "<h1>" + "Today's riddel: " + "</h1>" +
-          "<h2>" + result[i].title + "</h2>" +
-          "<h2>" + result[i].question + "</h2>" +
-          "<br>" + "<h3>" +
-          result[i].answer + "</h3>";
-        mainContainer.appendChild(div);
-      }
-    });
-  },
-});
+// riddelGetter();
+
+
+async function riddelGetter(){
+  const request = await fetch("https://api.api-ninjas.com/v1/riddles")
+  const data = await request.json();
+  riddelDisplayer(data);
+};
+function riddelDisplayer([riddelData]){
+  const riddelMainContainer = document.getElementById("myRiddelContainer");
+    riddelMainContainer.innerHTML =
+    "<h1>" + "Today's riddel: " + "</h1>" +
+    "<h2>" + riddelData.title + "</h2>" +
+    "<h2>" + riddelData.question + "</h2>" +
+    "<br>" + "<h3>" +
+    riddelData.answer + "</h3>";
+};
+
+// window.addEventListener('click', riddelGetter);
+
+
+// $.ajax({
+//   method: "GET",
+//   url: "https://api.api-ninjas.com/v1/riddles",
+//   headers: { "X-Api-Key": "" },
+//   contentType: "application/json",
+//   success: function (result) {
+//     var mainContainer = document.getElementById("myRiddelContainer");
+//     window.addEventListener("click", function () {
+//       mainContainer.innerHTML = "";
+//       for (var i = 0; i < result.length; i++) {
+//         var div = document.createElement("div");
+//         div.innerHTML =
+//           "<h1>" + "Today's riddel: " + "</h1>" +
+//           "<h2>" + result[i].title + "</h2>" +
+//           "<h2>" + result[i].question + "</h2>" +
+//           "<br>" + "<h3>" +
+//           result[i].answer + "</h3>";
+//         mainContainer.appendChild(div);
+//       }
+//     });
+//   },
+// });
+
+
+

@@ -1,4 +1,5 @@
 import { recipeResult } from "./controller.js";
+
 show();
 function show() {
   let mainPage = document.getElementById("app");
