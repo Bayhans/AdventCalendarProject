@@ -24,15 +24,11 @@ function getRandomRecipe() {
 }
 
 recipeGetter().then(function (data) {
-
   dataCache = data;
   var randomElement = [];
   randomElement.push(data[Math.floor(Math.random() * data.length)]);
   var mainContainer = document.getElementById("myRecipeContainer");
-
-
   window.addEventListener("click", function (event) {
-
     // console.log(event.target);
     if (event.target.className === 'modal-state') {
       let randomElement = getRandomRecipe();
@@ -53,16 +49,22 @@ recipeGetter().then(function (data) {
       mainContainer.appendChild(div);
       cardElementCache.push(div);
     }
+    // var something = (function() {
+    //   var executed = false;
+    //   return function() {
+    //       if (!executed) {
+    //           executed = true;
+    //           riddelGetter();      
+    //         }
+    //   };
+    // })();
     riddelGetter();
-    
   };
-  event.preventDefault(); // denne fikser dobbel kjøring 
-  // men den disabler modal lukking funksjonaliteten
-
   });
 });
-
 // riddelGetter();
+
+
 
 
 async function riddelGetter(){

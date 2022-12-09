@@ -190,9 +190,9 @@ header h1 {
   background: #fff;
   border-radius: 5px;
   padding: 1em 2em;
-  color: black;
+  color: rgb(255, 255, 255);
   height: auto;
-    background-color: rgb(84, 247, 111);
+  background-color: rgb(0, 100, 0);
 }
 
 #myRecipeContainer div h2 {
@@ -200,7 +200,7 @@ header h1 {
 }
 
 #myRecipeContainer div p {
-  color: blue;
+  color: #10275F;
 }
 
 #myRiddelContainer div h2 {
