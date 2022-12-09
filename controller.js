@@ -1,4 +1,4 @@
-export let recipeResult = [];
+export let whatWever;
 
 async function recipeGetter() {
   const query = "christmas";
@@ -29,84 +29,48 @@ recipeGetter().then(function (data) {
   randomElement.push(data[Math.floor(Math.random() * data.length)]);
   var mainContainer = document.getElementById("myRecipeContainer");
   window.addEventListener("click", function (event) {
-    // console.log(event.target);
-    if (event.target.className === 'modal-state') {
+    if (event.target.className === "modal-state") {
       let randomElement = getRandomRecipe();
-    mainContainer.innerHTML = "";
-    for (var i = 0; i < randomElement.length; i++) {
-      var div = document.createElement("div");
-      div.innerHTML =
-        "<h1>" + randomElement[i].title + "</h1>" +
-        "<br>" +
-        "<h2>" + "ingredients: " + "</h2>" +
-        "<h3>" + randomElement[i].ingredients + "</h3>" +
-        "<br>" +
-        "<h2>" + "instructions: " + "</h2>" +
-        "<h3>" + randomElement[i].instructions + "</h3>" +
-        "<br>" +
-        "<h2>" + "servings: " + "</h2>" +
-        randomElement[i].servings;
-      mainContainer.appendChild(div);
-      cardElementCache.push(div);
+      mainContainer.innerHTML = "";
+      for (var i = 0; i < randomElement.length; i++) {
+        var div = document.createElement("div");
+        div.innerHTML =
+          "<h1>" + randomElement[i].title + "</h1>" +
+          "<br>" +
+          "<h2>" + "ingredients: " + "</h2>" +
+          "<h3>" + randomElement[i].ingredients + "</h3>" +
+          "<br>" +
+          "<h2>" + "instructions: " + "</h2>" +
+          "<h3>" + randomElement[i].instructions + "</h3>" +
+          "<br>" +
+          "<h2>" + "servings: " + "</h2>" +
+          randomElement[i].servings;
+        mainContainer.appendChild(div);
+        cardElementCache.push(div);
+      }
     }
-    // var something = (function() {
-    //   var executed = false;
-    //   return function() {
-    //       if (!executed) {
-    //           executed = true;
-    //           riddelGetter();      
-    //         }
-    //   };
-    // })();
-    riddelGetter();
-  };
   });
 });
-// riddelGetter();
 
+riddelGetter();
 
-
-
-async function riddelGetter(){
-  const request = await fetch("https://api.api-ninjas.com/v1/riddles")
+async function riddelGetter() {
+  const request = await fetch("https://api.api-ninjas.com/v1/riddles");
   const data = await request.json();
   riddelDisplayer(data);
-};
-function riddelDisplayer([riddelData]){
+}
+
+function riddelDisplayer([data]) {
   const riddelMainContainer = document.getElementById("myRiddelContainer");
-    riddelMainContainer.innerHTML =
+  riddelMainContainer.innerHTML =
     "<h1>" + "Today's riddel: " + "</h1>" +
-    "<h2>" + riddelData.title + "</h2>" +
-    "<h2>" + riddelData.question + "</h2>" +
-    "<br>" + "<h3>" +
-    riddelData.answer + "</h3>";
-};
+    "<h2>" + data.title + "</h2>" +
+    "<h2>" + data.question + "</h2>" +
+    "<br>" +
+    "<h3>" + data.answer + "</h3>"+
+    "<h2>" + "You refresh the page to hafe a new riddel ;)" + "</h2>";
+}
+// window.addEventListener('click', riddelGetter, );
 
-// window.addEventListener('click', riddelGetter);
-
-
-// $.ajax({
-//   method: "GET",
-//   url: "https://api.api-ninjas.com/v1/riddles",
-//   headers: { "X-Api-Key": "" },
-//   contentType: "application/json",
-//   success: function (result) {
-//     var mainContainer = document.getElementById("myRiddelContainer");
-//     window.addEventListener("click", function () {
-//       mainContainer.innerHTML = "";
-//       for (var i = 0; i < result.length; i++) {
-//         var div = document.createElement("div");
-//         div.innerHTML =
-//           "<h1>" + "Today's riddel: " + "</h1>" +
-//           "<h2>" + result[i].title + "</h2>" +
-//           "<h2>" + result[i].question + "</h2>" +
-//           "<br>" + "<h3>" +
-//           result[i].answer + "</h3>";
-//         mainContainer.appendChild(div);
-//       }
-//     });
-//   },
-// });
-
-
-
+// event.preventDefault();  // kan brukes for stoppe dobbel riddelgetter
+// problemet men skal finne andre modal logik da.

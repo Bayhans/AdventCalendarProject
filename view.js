@@ -1,4 +1,4 @@
-import { recipeResult } from "./controller.js";
+import { whatWever } from "./controller.js";
 
 show();
 function show() {
@@ -97,7 +97,7 @@ function show() {
   </div>
 </main>
 <!-- the floating content-->
-<input class="modal-state" id="modal-1" type="checkbox" />
+<input  class="modal-state" id="modal-1" type="checkbox" />
 <div class="modal">
 <label class="modal__bg" for="modal-1"></label>
 <div class="modal__inner">
